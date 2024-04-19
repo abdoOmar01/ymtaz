@@ -63,18 +63,18 @@ const Page = () => {
   console.log(data)
 
   return (
-    <Suspense>
-      <div id="row">
-        <div id="info">
-          <PersonalInfo name={data.data.lawyer.name} about={data.data.lawyer.about} image={data.data.lawyer.photo} />
+    <div id="row">
+        <Suspense>
+          <div id="info">
+            <PersonalInfo name={data.data.lawyer.name} about={data.data.lawyer.about} image={data.data.lawyer.photo} />
 
-          <Brief name={data.data.lawyer.name} />
-        </div>
+            <Brief name={data.data.lawyer.name} />
+          </div>
+        </Suspense>
 
         <div id="billing">
         </div>
       </div>
-    </Suspense>
   )
 }
 
