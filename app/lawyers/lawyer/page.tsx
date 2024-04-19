@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { useSearchParams } from "next/navigation";
 import { getLawyerById } from "@/app/lib/lawyers";
+import { Suspense } from "react";
 import Image from "next/image";
 
 const PersonalInfo = (props: { name: string, about: string, image: string }) => {
@@ -62,16 +63,18 @@ const Page = () => {
   console.log(data)
 
   return (
-    <div id="row">
-      <div id="info">
-        <PersonalInfo name={data.data.lawyer.name} about={data.data.lawyer.about} image={data.data.lawyer.photo} />
+    <Suspense>
+      <div id="row">
+        <div id="info">
+          <PersonalInfo name={data.data.lawyer.name} about={data.data.lawyer.about} image={data.data.lawyer.photo} />
 
-        <Brief name={data.data.lawyer.name} />
-      </div>
+          <Brief name={data.data.lawyer.name} />
+        </div>
 
-      <div id="billing">
+        <div id="billing">
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { getCategories, getCategoryNameById } from "./lib/categories"
+import { getCategories } from "./lib/categories"
 import { useQuery } from "@tanstack/react-query"
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -28,7 +28,6 @@ const Category = (props: { image: string, title: string, count: number }) => {
 
 export default function Main() {
   const [title, setTitle] = useState('');
-  const router = useRouter();
 
   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
