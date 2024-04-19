@@ -1,29 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@400;700&family=Lexend:wght@300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --background-color: #F9F9F9;
+  --nav-color: #2D4768;
+  --accent: #B0B0B0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-color);
+  font-family: "Almarai";
+  margin-bottom: 100px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35.71px;
+  margin-bottom: 30px;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+header ul li {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--nav-color);
+  cursor: pointer;
+}
+
+.im-cont img {
+  margin: auto;
+}
+
+.vector {
+  cursor: pointer;
+  width: 25px;
+  border-top: 3px solid var(--nav-color);
+  padding: 2px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  padding: 2px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding-left: 30px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+.card-grid {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2%;
+  row-gap: 2%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  box-shadow: 0px 2px 4px -2px #1018280F;
+  box-shadow: 0px 4px 8px -2px #1018281A;
+}
+
+
+.card:hover {
+  cursor: pointer;
+  background: linear-gradient(136.97deg, #DDB762 3.34%, #000000 225.23%);
+}
+
+.card .card-image {
+  margin: 20% auto;
+  border-radius: 50%;
+  box-shadow: 41.67px 52.08px 145.83px 0px #F9DAD5CC;
+}
+
+.card h3 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+#row {
+  display: flex;
+}
+
+#info {
+  flex: 60%;
+  padding: 10px;
+}
+
+#billing {
+  flex: 40%;
+}
+
+.topic-card {
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 20px 40px 30px 10px;
+  margin-bottom: 50px;
+}
+
+.topic-card .description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #A3A4A5;
+}
+
+.topic-card h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 31.25px;
+  margin-bottom: 50px;
+  color: #2C4768;
+}
+
+.topic-card #personal {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+
+.topic-card #personal .profile {
+  border-radius: 50%;
+}
+
+.topic-card #personal #info {
+  margin-right: 20px;
+}
+
+.topic-card #personal #info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.topic-card #personal #info p {
+  color: #A3A4A5;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  margin-bottom: 10px;
+}
+
+.topic-card #comment {
+  background-color: #F9F9F9;
+  border-radius: 24px 0px 24px 0px;
+  width: 70%;
+  padding: 20px;
+}
+
+.topic-card #comment > p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15.62px;
+  letter-spacing: -0.30000001192092896px;
+  color: #A3A4A5;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.topic-card #comment #commentor-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.topic-card #comment #commentor-info p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.4px;
+  color: #A3A4A5;
 }
 
 @layer utilities {
